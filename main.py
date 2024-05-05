@@ -1,4 +1,3 @@
-import gradio
 from keras.models import load_model  # TensorFlow is required for Keras to work
 from PIL import Image, ImageOps  # Install pillow instead of PIL
 import numpy as np
@@ -7,16 +6,13 @@ import numpy as np
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = load_model("/models/keras_Model.h5", compile=False)
+model = load_model("/content/Dr-Leaf/models/keras_Model.h5", compile=False)
 
 # Load the labels
-class_names = open("/models/labels.txt", "r").readlines()
+class_names = open("/content/Dr-Leaf/models/labels.txt", "r").readlines()
 
 def prediction(image):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
-
-    # Replace this with the path to your image
-    image = Image.open("<IMAGE_PATH>").convert("RGB")
 
     # resizing the image to be at least 224x224 and then cropping from the center
     size = (224, 224)
@@ -37,6 +33,8 @@ def prediction(image):
     class_name = class_names[index]
     confidence_score = prediction[0][index]
     return class_name[2:], confidence_score*100
+
+import gradio
 
 gui = gradio.Interface(fn=prediction, inputs="image", outputs=["text", "number"])
 gui.launch(share=True)
