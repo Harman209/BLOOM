@@ -6,7 +6,7 @@ import numpy as np
 np.set_printoptions(suppress=True)
 
 # Load the model
-model = load_model("/content/Dr-Leaf/models/keras_Model.h5", compile=False)
+model = load_model("/content/Dr-Leaf/models/keras_model.h5", compile=False)
 
 # Load the labels
 class_names = open("/content/Dr-Leaf/models/labels.txt", "r").readlines()
@@ -15,9 +15,9 @@ def prediction(image):
     data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 
     # resizing the image to be at least 224x224 and then cropping from the center
+    image_PIL = Image.fromarray(image)
     size = (224, 224)
-    image = ImageOps.fit(image, size, Image.Resampling.LANCZOS)
-
+    image = ImageOps.fit(image, size, Image.ANTIALIAS)
     # turn the image into a numpy array
     image_array = np.asarray(image)
 
@@ -36,6 +36,6 @@ def prediction(image):
 
 import gradio
 
-gui = gradio.Interface(fn=prediction, inputs="image", outputs= gradio.Textbox(label="status") title="Dr. Leaf", description="A model to predict the disease of a plant")
+gui = gradio.Interface(fn=prediction, inputs="image", outputs= gradio.Textbox(label="status"), title="Dr. Leaf", description="A model to predict the disease of a plant")
 gui.launch(share=True)
 
