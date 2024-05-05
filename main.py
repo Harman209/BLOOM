@@ -38,5 +38,5 @@ def prediction(image):
     return class_name[2:], confidence_score*100
 
 gui = gr.Interface(fn=prediction, inputs="image", outputs=["text", "number"])
-gui.launch()
+gui.launch(share=True)
 
