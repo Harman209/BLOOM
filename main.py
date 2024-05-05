@@ -36,6 +36,6 @@ def prediction(image):
 
 import gradio
 
-gui = gradio.Interface(fn=prediction, inputs="image", outputs=["text"(label="Status"), "number"(label="Confidence Score")])
+    gui = gradio.Interface(fn=prediction, inputs="image", outputs= gradio.Textbox(label="status")
 gui.launch(share=True)
 
