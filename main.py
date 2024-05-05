@@ -36,6 +36,6 @@ def prediction(image):
 
 import gradio
 
-gui = gradio.Interface(fn=prediction, inputs="image", outputs= gradio.Textbox(label="status"))
+gui = gradio.Interface(fn=prediction, inputs="image", outputs= gradio.Textbox(label="status") title="Dr. Leaf", description="A model to predict the disease of a plant")
 gui.launch(share=True)
 
