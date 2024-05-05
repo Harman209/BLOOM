@@ -1,2 +1,18 @@
-# BLOOM
-Botanical Leaf Observation and Outcome Monitor
+
+# Dr Leaf
+
+A model to predict the disease of a plant.
+
+
+[![GPLv3 License](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/https://colab.research.google.com/drive/1uGgKiSRanzEkJYQAyIoRCHvJZva0MwjP?usp=sharing)
+
+## Authors
+
+- [Harman Kajla](https://www.github.com/Harman209)
+- Swayam Bang
+- Aarav Bhardwaj
+
+Swami Sant Dass Public School, Jalandhar
+## License
+
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
