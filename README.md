@@ -9,8 +9,8 @@ A model to predict the disease of a plant.
 ## Authors
 
 - [Harman Kajla](https://www.github.com/Harman209)
+- [Aarav Bhardwaj](https://www.github.com/AaravBhardwaj007)
 - Swayam Bang
-- Aarav Bhardwaj
 
 Swami Sant Dass Public School, Jalandhar
 ## License
